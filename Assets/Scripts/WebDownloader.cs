@@ -17,7 +17,7 @@ public static class WebDownloader
         download(url, OnFileRetrieved);
     }
 
-    [MonoPInvokeCallback(typeof(Action<byte[], int>))]
+    [MonoPInvokeCallback(typeof(Action<byte[], int, int>))]
     public static void OnFileRetrieved([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U1, SizeParamIndex = 1)] byte[] bytes, int length, int success)
     {
         if (success != 0)
